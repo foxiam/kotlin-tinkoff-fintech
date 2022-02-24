@@ -1,1 +1,0 @@
-D:\IdeaProjects\kotlin-tinkoff\build\classes\kotlin\main\Car.class;D:\IdeaProjects\kotlin-tinkoff\build\classes\kotlin\main\ElectricCar.class;D:\IdeaProjects\kotlin-tinkoff\build\classes\kotlin\main\MainKt.class;D:\IdeaProjects\kotlin-tinkoff\build\classes\kotlin\main\Vehicle$DefaultImpls.class;D:\IdeaProjects\kotlin-tinkoff\build\classes\kotlin\main\Vehicle.class
