@@ -13,8 +13,7 @@ class Garage(private val vehicle: Vehicle) {
     fun diagnostic() {
         println("---Diagnostic---")
         vehicle.allSpecifications()
-        if (vehicle is ElectricCar) println("Amount battery power ${vehicle.getBatteryPower()} Wh.")
-        else if (vehicle is Car) println("Amount fuel ${vehicle.getAmountGasoline()} л.")
+        vehicle.printAmountPower()
         println("----------------")
     }
 

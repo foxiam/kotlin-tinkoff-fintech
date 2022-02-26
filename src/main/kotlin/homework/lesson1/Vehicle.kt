@@ -30,4 +30,6 @@ abstract class Vehicle {
     fun drive(distance: Int) = drive(distance.toFloat())
 
     abstract fun refilling()
+
+    abstract fun printAmountPower()
 }

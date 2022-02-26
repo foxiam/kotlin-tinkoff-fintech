@@ -5,11 +5,11 @@ class ElectricCar(
     override val model: String,
     override val maxSpeed: Int,
     override val consumption: Int,
-    private val batteryCapacity: Int,
+    private val batteryCapacity: Float,
 ) : Vehicle() {
 
     override val type = "Electric Car"
-    private var batteryPower = batteryCapacity.toFloat()
+    private var batteryPower = batteryCapacity
 
     override fun allSpecifications() {
         basicSpecifications()
@@ -22,7 +22,11 @@ class ElectricCar(
     }
 
     override fun refilling() {
-        batteryPower = batteryCapacity.toFloat()
+        batteryPower = batteryCapacity
+    }
+
+    override fun printAmountPower() {
+        println("Amount battery power: $batteryPower Wh.")
     }
 
     fun getBatteryPower(): Float {

@@ -5,11 +5,11 @@ class Car(
     override val model: String,
     override val maxSpeed: Int,
     override val consumption: Int,
-    private val tankVolume: Int
+    private val tankVolume: Float
 ) : Vehicle() {
 
     override val type = "Car"
-    private var amountGasoline = tankVolume.toFloat()
+    private var amountGasoline = tankVolume
 
     override fun allSpecifications() {
         basicSpecifications()
@@ -22,7 +22,11 @@ class Car(
     }
 
     override fun refilling() {
-        amountGasoline = tankVolume.toFloat()
+        amountGasoline = tankVolume
+    }
+
+    override fun printAmountPower() {
+        println("Amount battery power: $amountGasoline л.")
     }
 
     fun getAmountGasoline(): Float {

@@ -3,8 +3,8 @@ import homework.lesson1.ElectricCar
 import homework.lesson1.Garage
 
 fun main() {
-    val volkswagen = Car("Volkswagen", "Polo", 250, 8, 55)
-    val tesla = ElectricCar("Tesla", "Model 3", 300, 20, 82)
+    val volkswagen = Car("Volkswagen", "Polo", 250, 8, 55F)
+    val tesla = ElectricCar("Tesla", "Model 3", 300, 20, 82F)
     val vehicleList = listOf(volkswagen, tesla)
 
     vehicleList.forEach {
@@ -23,7 +23,7 @@ fun main() {
 
     garage.diagnostic()
     garage.refilingCar()
-    println("Amount fuel ${(garage.getVehicle() as Car).getAmountGasoline()} л.")
+    garage.getVehicle().printAmountPower()
     garage.driveOut()
     println("Car in the garage? ${!garage.isEmpty()}")
     garage.driveIn()

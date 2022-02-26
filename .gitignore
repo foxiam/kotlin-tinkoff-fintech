@@ -81,7 +81,6 @@ out
 gen
 ### Gradle template
 .gradle
-*.bin
 **/build/
 !src/**/build/
 
