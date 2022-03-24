@@ -1,24 +1,11 @@
 package homework.lesson5
 
-import java.util.function.BiPredicate
+class Service(private val listCar: List<Car>) {
 
-class Service(val listCar: List<Car>, ) {
-    private val sequenceCar = listCar.asSequence()
+    fun getDescriptionAndSort() = listCar.sortedBy { it.price }
+        .map { makeDescription(it) }
 
-    fun getSequenceDescriptionAndSort() = sequenceCar.sortedBy { it.price }
-        .map {
-            listOf(
-                "Manufacture: ${it.manufacture}",
-                "Model: ${it.model}",
-                "Body type: ${it.bodyType}",
-                "Price: ${"%.2f".format(
-                    it.price / Currency.getExchangeRate()
-                )} $",
-                "Fuel Consumption: ${it.fuelConsumption} л."
-            )
-        }
+    fun getGroupByBodyType() = listCar.groupBy { it.bodyType }
 
-    fun getSequenceGroupByBodyType() = sequenceCar.groupBy { it.bodyType }
-
-    fun getSequenceOfThreeFilteredByPredicate(predicate: (Car) -> Boolean) = sequenceCar.filter(predicate).take(3)
+    fun getThreeFiltered(predicate: (Car) -> Boolean) = listCar.filter(predicate).take(3)
 }
