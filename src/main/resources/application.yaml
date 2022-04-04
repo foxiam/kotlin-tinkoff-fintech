@@ -1,0 +1,6 @@
+spring:
+  application.name: spring-app
+  profiles.active: dev
+server.port: 9000
+
+catalog.address: http://localhost:9001
