@@ -1,6 +1,6 @@
-package homework.lesson6.shop.service.client
+package homework.lesson7.shop.service.client
 
-import homework.lesson6.shop.model.Item
+import homework.lesson7.shop.model.Item
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.http.HttpMethod
 import org.springframework.stereotype.Service
@@ -19,8 +19,8 @@ class CatalogItemClient(
     fun getCatalog() : Set<Item> =
         restTemplate.exchange<Set<Item>>("$catalogAddress$GET_CATALOG", HttpMethod.GET).body.orEmpty()
 
-    fun getItem(name: String): Item? = try {
-        restTemplate.getForObject<Item>("$catalogAddress$GET_ITEM_BY_NAME", name)
+    fun getItem(id: Int): Item? = try {
+        restTemplate.getForObject<Item>("$catalogAddress$GET_ITEM_BY_NAME", id)
     } catch (e: NotFound) {
         null
     }
