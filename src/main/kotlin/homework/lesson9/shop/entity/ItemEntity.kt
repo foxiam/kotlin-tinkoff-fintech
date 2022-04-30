@@ -1,15 +1,10 @@
-package homework.lesson7.shop.model
+package homework.lesson9.shop.entity
 
 import javax.persistence.*
 
-data class Item(
-    val name: String,
-    val price: Double
-)
-
 @Entity
 @Table(name = "items")
-data class ItemEnt(
+data class ItemEntity(
     @Column(name = "name")
     val name: String,
 
@@ -18,7 +13,6 @@ data class ItemEnt(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     @Column(name = "id")
     var id: Int? = null
     )

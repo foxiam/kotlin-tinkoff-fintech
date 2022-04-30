@@ -1,4 +1,4 @@
-package homework.lesson7.configuration
+package homework.lesson9.configuration
 
 import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus

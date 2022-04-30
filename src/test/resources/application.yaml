@@ -8,5 +8,3 @@ spring:
   liquibase.change-log: db/changelog/db.changelog-master.xml
   jpa.show-sql: true
 server.port: 9000
-
-catalog.address: http://localhost:9001

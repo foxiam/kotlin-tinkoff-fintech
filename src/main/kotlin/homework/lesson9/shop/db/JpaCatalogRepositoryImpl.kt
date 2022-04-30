@@ -1,6 +1,6 @@
-package homework.lesson7.shop.db
+package homework.lesson9.shop.db
 
-import homework.lesson7.shop.model.*
+import homework.lesson9.shop.entity.ItemEntity
 import org.springframework.context.annotation.Primary
 import org.springframework.stereotype.Service
 
@@ -8,15 +8,15 @@ import org.springframework.stereotype.Service
 @Service
 class JpaCatalogRepositoryImpl(private val repository: JpaCatalogRepo) : CatalogRepository {
 
-    override fun getItem(id: Int): ItemEnt {
+    override fun getItem(id: Int): ItemEntity {
         return repository.findById(id).get()
     }
 
-    override fun getCatalog(): Set<ItemEnt> {
+    override fun getCatalog(): Set<ItemEntity> {
         return repository.findAll().toSet()
     }
 
-    override fun addItem(item: ItemEnt) {
+    override fun addItem(item: ItemEntity) {
         repository.save(item)
     }
 
