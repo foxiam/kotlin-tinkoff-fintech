@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="foxiam" id="create">
+        <sql>
+            create table items
+            (
+                name VARCHAR(50) UNIQUE NOT NULL,
+                price INT,
+                id serial PRIMARY KEY
+            )
+        </sql>
+    </changeSet>
+    <changeSet author="foxiam" id="fill">
+        <sql>
+            insert into items (name, price) values ('notebook', 100);
+            insert into items (name, price) values ('pc', 120);
+            insert into items (name, price) values ('smartphone', 80);
+        </sql>
+    </changeSet>
+</databaseChangeLog>
